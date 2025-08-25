@@ -34,14 +34,19 @@ print("Response status code: ", response.status_code)
 print("Response content: ", response.text)
 ```
 
-PoC Run Results:
+### PoC Run Results:
 
-After sending the crafted request with the injected command (ls), the command is successfully executed on the device. The response returned includes the output of the executed command. Specifically, the file system's directory listing is displayed, showing the contents of the device's directories.
+After sending the crafted request with the injected command (`ls`), the command is successfully executed on the device. The response returned includes the output of the executed command. Specifically, the file system's directory listing is displayed, showing the contents of the device's directories.
 
-Command Executed: ls (list directories)
+- **Command Executed**: `ls` (list directories)
+- **Output**: The directory contents are printed as expected, confirming that the command injection was successful and arbitrary system commands can be executed remotely.
 
-Output: The directory contents are printed as expected, confirming that the command injection was successful and arbitrary system commands can be executed remotely.
-
-This indicates that the device is vulnerable to command injection attacks, as the attacker was able to execute a basic ls command remotely and retrieve the file system's contents.
+This indicates that the device is vulnerable to command injection attacks, as the attacker was able to execute a basic `ls` command remotely and retrieve the file system's contents.
 
 ![PoC Execution Result](3.png)
+
+
+## Mitigation
+- Apply the latest firmware update from Tenda to address this issue.
+- Ensure proper input validation and sanitization to prevent command injection attacks.
+
