@@ -1,17 +1,18 @@
-# CVE-XXXX-YYYY: Remote Code Execution Vulnerability in Tenda AC6 Firmware
+# Command Injection Vulnerability in Tenda AC6 Firmware
 
 ## Vulnerability Overview
-There is a **Remote Code Execution (RCE)** vulnerability in the **Tenda AC6 firmware version 15.03.05.16_multi**. The vulnerability exists in the **exeCommand** function of the firmware. Specifically, the **cmdinput** parameter, which is passed via HTTP, allows attackers to inject and execute arbitrary system commands on the device. This vulnerability can lead to **remote command execution** without proper authentication.
+There is a **Command Injection** vulnerability in the **Tenda AC6 firmware version 15.03.05.16_multi**. The vulnerability exists in the **exeCommand** function of the firmware. Specifically, the **cmdinput** parameter, which is passed via HTTP, allows attackers to inject arbitrary commands into the system. This vulnerability allows attackers to execute arbitrary system commands, potentially gaining unauthorized access or causing other system misconfigurations.
 
-The issue arises from improper handling of user-supplied input, where an attacker can exploit the **cmdinput** parameter to execute arbitrary commands on the system. For example, an attacker could use this to list directories, read sensitive files, or execute malicious commands remotely.
+The issue arises from improper sanitization of user-supplied input, where an attacker can exploit the **cmdinput** parameter to inject and execute arbitrary commands. For example, an attacker could inject commands like `ls` to list directories, or use other commands to read sensitive files or execute malicious actions remotely. ![Root Cause of Command Injection Vulnerability](images/1.png)
 
 ## Affected Versions
 - Tenda AC6 Firmware version 15.03.05.16_multi
 
 ## Impact
-- Remote Code Execution (RCE)
+- Command Injection
 - Unauthorized access to the system
 - Potential for information disclosure or system compromise
+
 
 ## Proof of Concept (PoC)
 
