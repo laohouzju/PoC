@@ -11,6 +11,8 @@ This flaw allows a remote attacker to send a specially crafted HTTP request with
 ## Root Cause
 
 The vulnerability arises from improper sanitization of user input and unsafe use of sprintf when handling the username parameter, which directly overwrites stack memory.
+![Root Cause of Stack Overflow Vulnerability](fromPptpUserAdd5.png)
+![Root Cause of Stack Overflow Vulnerability](fromPptpUserAdd6.png)
 
 ## Affected Versions
 - Tenda FH1206 V02.03.01.35
@@ -32,8 +34,9 @@ response = requests.post(host_port + url, data=data)
 print("Response status code: ", response.status_code)
 print("Response content: ", response.text)
 ```
-
+![PoC](fromPptpUserAdd2.png)
 ### PoC Run Results:
+![Results](fromPptpUserAdd1.png)
 
 
 
