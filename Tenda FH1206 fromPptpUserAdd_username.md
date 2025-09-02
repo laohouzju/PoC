@@ -1,4 +1,4 @@
-# Command Injection Vulnerability in Tenda AC6 Firmware
+# Stack Overflow Vulnerability in Tenda FH1206 Firmware
 
 ## Vulnerability Overview
 There is a stack-based buffer overflow vulnerability in the Tenda AC6 firmware version 15.03.05.16_multi.
@@ -43,5 +43,5 @@ print("Response content: ", response.text)
 
 ## Mitigation
 - Apply the latest firmware update from Tenda to address this issue.
-- Ensure proper input validation and sanitization to prevent command injection attacks.
+- Ensure proper input validation and sanitization to prevent stack overflow attacks.
 
